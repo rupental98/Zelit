@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -67,8 +68,8 @@ export default function Footer() {
                 Prywatność
               </div>
               <ul className="font-body space-y-2">
-                <li><a className="hover:text-green-600 transition-colors" href="/polityka-prywatnosci">Polityka prywatności</a></li>
-                <li><a className="hover:text-green-600 transition-colors" href="/polityka-cookies">Polityka cookies</a></li>
+                <li><Link to="/privacy" className="hover:text-green-600 transition-colors">Polityka prywatności</Link></li>
+                <li><Link to="/polityka-cookies" className="hover:text-green-600 transition-colors">Polityka cookies</Link></li>
               </ul>
             </div>
           </div>

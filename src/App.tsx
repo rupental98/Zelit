@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import HeroSection from "./components/HeroSection";
 import BrandStrip from "./components/BrandStrip";
@@ -9,13 +10,16 @@ import StatsStrip from "./components/StatsStrip";
 import Pricing from "./components/Pricing";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Privacy from "./components/Privacy";
+import Cookies from "./components/Cookies";
+import CookieBanner from "./components/CookieBanner";
 
 /**
  * ZELIT — Improved landing page
  * Enhanced palette with gradients and better contrast
  * Improved layout and typography
  */
-export default function ZelitLanding() {
+function Home() {
   return (
     <div
       className="min-h-screen bg-white text-black"
@@ -57,6 +61,19 @@ export default function ZelitLanding() {
       <Pricing />
       <Contact />
       <Footer />
+      <CookieBanner />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/polityka-cookies" element={<Cookies />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
